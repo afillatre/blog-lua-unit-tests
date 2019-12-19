@@ -1,0 +1,12 @@
+#!/usr/bin/env resty
+-- See https://github.com/thibaultcha/lua-resty-busted/blob/master/bin/busted
+
+-- Prevents a warning log. See https://github.com/Kong/kong/commit/f8c6f265592c7c2cd705732f3c63a3f112219faf
+setmetatable(_G, nil)
+
+if ngx ~= nil then
+  ngx.exit = function()end
+end
+
+-- Busted command-line runner
+require 'busted.runner'({ standalone = false })

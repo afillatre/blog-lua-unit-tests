@@ -3,7 +3,7 @@ MAINTAINER Alexandre FILLATRE <afillatre@ippon.fr>
 
 FROM prod as test
 RUN apt-get update && \
-    apt-get install -y luarocks && \
+    apt-get install -y luarocks openresty-resty && \
     luarocks install busted
 
 WORKDIR /data

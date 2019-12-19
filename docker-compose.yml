@@ -16,3 +16,4 @@ services:
     volumes:
       - ./app:/data/app
       - ./spec:/data/spec
+      - ./lua/busted:/usr/local/bin/busted
