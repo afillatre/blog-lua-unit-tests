@@ -1,9 +1,18 @@
-version: "3"
+version: "3.4"
 services:
   server:
-    image: openresty/openresty:1.15.8.2-5-buster
+    build:
+      context: .
+      target: prod
     ports:
       - "8080:80"
     volumes:
       - ./conf:/etc/nginx/conf.d
       - ./app:/app
+  test-server:
+    build:
+      context: .
+      target: test
+    volumes:
+      - ./app:/data/app
+      - ./spec:/data/spec

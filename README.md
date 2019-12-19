@@ -11,3 +11,6 @@ Run the following command in the project's folder : `docker-compose up --build s
 Then, check the result :
 - `curl http://localhost` should print `Hello`
 - `curl http://localhost?name=alex` should print `Hello alex`
+
+## Test the code
+Execute the following command: `docker-compose up --build test-server`
